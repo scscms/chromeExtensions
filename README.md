@@ -1,5 +1,9 @@
 Chrome扩展程序<sup>shine</sup>
 
+课程介绍：介绍Chrome插件功能，开发插件的基础知识
+课程目标：掌控基本的Chrome插件知识
+适合人群：前端工程师、插件爱好者
+
 #### 什么是Chrome插件
     严格来讲，我们说的东西应该叫Chrome扩展(Chrome Extension)，真正意义上的Chrome插件是更底层的浏览器功能扩展，需要对浏览器源码有一定掌握才有能力去开发。Chrome插件的叫法只是大家已经习惯而已。
     Chrome插件是一个用Web技术开发、用来增强浏览器功能的软件，它其实就是一个由HTML、CSS、JS、图片等资源组成的一个.crx后缀的压缩包.
@@ -8,7 +12,7 @@ Chrome扩展程序<sup>shine</sup>
 
 ####　Chrome插件能做什么
 
-增强浏览器功能，轻松实现属于自己的“定制版”浏览器，等等。Chrome插件提供了很多实用API供我们使用，包括但不限于：
+增强浏览器功能，轻松实现属于自己的`定制版`浏览器，等等。Chrome插件提供了很多实用API供我们使用，包括但不限于：
 - tab控制；
 - 书签控制；
 - 下载控制；
@@ -20,34 +24,49 @@ Chrome扩展程序<sup>shine</sup>
 - 等等；
 
 ### Chrome扩展应用开发
+![结构](img/jg.png)
 ####　Manifest文件格式
 [Manifest文件说明](base/manifest.json)
-- 示例base/hello-world-1
-- 示例base/hello-world-2
+- [示例base/hello-world-1](base/hello-world-1)
+- [示例base/hello-world-2](base/hello-world-2)
 ####　Popup页面
-- 示例base/popup
+- [示例base/popup](base/popup)
+
 popup页面会根据内容自动显示合适的大小，建议popup页面的高度最好不要超过500像素。
 ####　常驻后台
-- 示例base/background
-background可以包含三种属性，分别是scripts、page和persistent。如果指定了scripts属性，则Chrome会在扩展启动时自动创建一个包含所有指定脚本的页面；如果指定了page属性，则Chrome会将指定的HTML文件作为后台页面运行。通常我们只需要使用scripts属性即可。persistent属性表示是否一直在后台运行，默认是true。建议为false，表示扩展在后台按需运行。
+- 示例[base/background](base/background)
+
+background可以包含三种属性，分别是scripts、page和persistent属性。如果指定了scripts属性，则Chrome会在扩展启动时自动创建一个包含所有指定脚本的页面；如果指定了page属性，则Chrome会将指定的HTML文件作为后台页面运行。通常我们只需要使用scripts属性即可。persistent属性表示是否一直在后台运行，默认是true。建议为false，表示扩展在后台按需运行。
+####　选项页面
+有一些扩展允许用户进行个性化设置，这样就需要向用户提供一个选项页面。Chrome通过Manifest文件
+的options_page属性为开发者提供了这样的接口，可以为扩展指定一个选项页面。
 ####　i18n多语言支持
-- 示例base/getMessage
+- [示例base/getMessage](base/getMessage)
 #### 操作用户正在浏览的页面
+- [示例base/irootech](base/irootech)
 ####　跨域请求
-####　带选项页面的扩展
+
 ####　扩展页面间的通信
+A、popup         chrome.extension.getViews({type:'popup'}) chrome.runtime.sendMessage chrome.runtime.connect
+B、background    chrome.extension.getBackgroundPage() chrome.extension.getViews()
+C、page js       chrome.tabs.query() window.postMessage
+D、content_scripts   chrome.runtime.sendMessage chrome.runtime.connect chrome.tabs.sendMessage
 ####　储存数据
-
-###　Chrome扩展的UI界面
+- [示例base/storage](base/storage)
+localStorage
+Web SQL Database
+chrome.storage 随用户自动同步
+fileSystem 详见《前端安全及性能培训》
 ####　Browser Actions
-####　图标
-
-####　标题和badge
+- [示例base/browserActions](base/browserActions)
+####　Page Actions
+- [示例base/pageActions](base/pageActions)
+####　标题和 badge
+- [示例base/icon-badge](base/icon-badge)
 ####　右键菜单
 ####　桌面提醒
 ####　Omnibox
-####　Page Actions
-
+- [示例base/omnibox](base/omnibox)
 
 ###　管理浏览器
 ####　书签
