@@ -1,4 +1,4 @@
-Chrome扩展程序<sup>shine</sup>
+Chrome浏览器插件开发<sup>shine</sup>
 
 课程介绍：介绍Chrome插件功能，开发插件的基础知识
 课程目标：掌控基本的Chrome插件知识
@@ -17,11 +17,11 @@ Chrome扩展程序<sup>shine</sup>
 - 书签控制；
 - 下载控制；
 - 窗口控制；
-- 标签控制；
 - 网络请求控制，各类事件监听；
 - 自定义原生菜单；
 - 完善的通信机制；
 - 等等；
+
 
 ### Chrome扩展应用开发
 ![结构](img/jg.png)
@@ -45,7 +45,7 @@ background可以包含三种属性，分别是scripts、page和persistent属性�
 #### 操作用户正在浏览的页面
 - [示例base/irootech](base/irootech)
 ####　跨域请求
-
+- [示例base/translate](base/translate)
 ####　扩展页面间的通信
 A、popup         chrome.extension.getViews({type:'popup'}) chrome.runtime.sendMessage chrome.runtime.connect
 B、background    chrome.extension.getBackgroundPage() chrome.extension.getViews()
@@ -55,7 +55,7 @@ D、content_scripts   chrome.runtime.sendMessage chrome.runtime.connect chrome.t
 - [示例base/storage](base/storage)
 localStorage
 Web SQL Database
-chrome.storage 随用户自动同步
+chrome.storage sync和local
 fileSystem 详见《前端安全及性能培训》
 ####　Browser Actions
 - [示例base/browserActions](base/browserActions)
@@ -64,24 +64,41 @@ fileSystem 详见《前端安全及性能培训》
 ####　标题和 badge
 - [示例base/icon-badge](base/icon-badge)
 ####　右键菜单
-####　桌面提醒
+- [示例base/contextMenus](base/contextMenus)
+#### 快捷键
+- [示例base/commands](base/commands)
+####　桌面提醒 (同上)
 ####　Omnibox
 - [示例base/omnibox](base/omnibox)
 
 ###　管理浏览器
-####　书签
+
 ####　Cookies
-####　历史
+- [示例base/cookie-clearer](base/cookie-clearer)
+
 ####　管理扩展与应用
+- [示例base/management](base/management)
 ####　标签
+- [示例base/tabs](base/tabs)
+- [OneTab](https://chrome.google.com/webstore/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall?hl=zh-CN)
 ####　Override Pages
+####　书签
+- [示例base/bookmark](base/bookmark)
+####　历史
 ####　下载
+- [示例base/downloads](base/downloads)
 ####　网络请求
+- [示例base/webRequest](base/webRequest)
 ####　代理
+- [xswitch](https://github.com/yize/xswitch)
+- [SwitchyOmega](https://github.com/FelisCatus/SwitchyOmega)
 ####　系统信息
+- [示例base/system](base/system)
+### 插件案例（广告时间）
+办公期间您想听歌吗？听歌又不想安装软件吧！那请使用 [SCSCMS音乐播放器](https://chrome.google.com/webstore/detail/scscms%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/djkddblnfgendjoklmfmocaboelkmdkm) 插件吧，边写码边听歌！
 
 其他　制作Chrome主题
-- 示例theme/theme
+- 示例[theme/theme](theme/theme)
 [在线制作主题](https://www.themebeta.com/chrome-theme-creator-online.html)
 
 ###　MV3 Feature summary
@@ -142,3 +159,13 @@ chrome.tabs.executeScript({
     - chrome.extension.connect()
     - chrome.extension.onConnect
     - chrome.extension.onMessage
+
+
+### scscmsmusic扩展功能
+1、commands快捷键
+2、comnibox输入
+3、菜单抓取歌曲
+4、默认一首测试歌曲
+
+
+demo:http://www.kkh86.com/it/chrome-extension-doc/extensions/samples.html
