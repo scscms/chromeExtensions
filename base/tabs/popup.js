@@ -102,10 +102,6 @@ document.getElementById('highlighted').addEventListener('click',()=>{
     });
 }, false)
 
-// 截图
-document.getElementById('capture').addEventListener('click',()=>{
-    chrome.extension.getBackgroundPage().capture()
-}, false)
 /*
 移除
 * chrome.tabs.remove(tabIds, function(){

@@ -75,7 +75,6 @@ fileSystem 详见《前端安全及性能培训》
 
 ####　Cookies
 - [示例base/cookie-clearer](base/cookie-clearer)
-
 ####　管理扩展与应用
 - [示例base/management](base/management)
 ####　标签
@@ -94,6 +93,7 @@ fileSystem 详见《前端安全及性能培训》
 - [SwitchyOmega](https://github.com/FelisCatus/SwitchyOmega)
 ####　系统信息
 - [示例base/system](base/system)
+
 ### 插件案例（广告时间）
 办公期间您想听歌吗？听歌又不想安装软件吧！那请使用 [SCSCMS音乐播放器](https://chrome.google.com/webstore/detail/scscms%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/djkddblnfgendjoklmfmocaboelkmdkm) 插件吧，边写码边听歌！
 
